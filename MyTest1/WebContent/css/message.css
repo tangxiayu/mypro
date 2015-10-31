@@ -1,0 +1,74 @@
+@charset 'utf-8';
+* {
+	margin: 0;
+	padding: 0;
+	
+}
+img {
+	border: 0;
+}
+#message {
+	width: 100%;
+	height: 100%;
+}
+
+.back {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	background: #eee;
+	margin-bottom: 50px;
+}
+.back a {
+	margin-left: 80%;
+	text-decoration: none;
+	color: #00BFFF;
+}
+.back a:hover {
+	color: red;
+}
+
+#tt {
+	width: 100%;
+	border: 2px solid #fff;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+#tt th,td {
+	height: 28px;
+	border: 2px solid #fff;
+	text-align: center;
+}
+caption {
+	font-size:30px;
+}
+tr .num {
+	width: 5%;
+}
+tr .mes {
+	text-align: left;
+	word-wrap: break-word;
+}
+tr .time {
+	width: 15%;
+}
+tr .checkbox {
+	width: 5%;
+}
+tr span {
+	cursor: pointer;
+}
+.delete {
+	width: 100%;
+	height: 80px;
+	padding-top: 20px;
+}
+.delete input {
+	width: 30%;
+	height: 30px;
+	background: #00BFFF;
+	margin-left: 75%;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px #fff;
+	font-size: 20px;
+}
