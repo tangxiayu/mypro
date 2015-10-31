@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>menu菜单组件</title>
+
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+		$(function(){
+			$(document).on('contextmenu',function(e){
+				e.preventDefault();
+				$('#box').menu('show', {
+					left:e.pageX,
+					top:e.pageY
+				});
+			});
+			
+			console.log($('#box').menu('options'));
+			console.log($('#box').menu('getItem','#new').id);
+			//$('#box').menu('setText',{
+			//	target:'#new',
+			//	text:'xinjian'
+			//});
+			$('#box').menu('appendItem',{
+				text:'编辑',
+				iconCls:'icon-edit',
+				onclick:function(){
+					console.log($('#box').menu('findItem','编辑'))
+				}
+			});
+			
+			
+		});
+	</script>
+</head>
+
+<body>
+	<div class="easyui-menu" id="box" style="width:120px;">
+		<div id="new">新建</div>
+		<div>打开
+			<div>
+				<div>word</div>
+				<div>excel</div>
+				<div>ppt</div>
+				<div>记事本</div>
+			</div>
+			
+		</div>
+		<div class="menu-sep"></div>
+		<div>保存</div>
+		<div>退出</div>
+	</div>
+	
+</body>
+</html>

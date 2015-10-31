@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>messager消息窗口组件</title>
+
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+	$(function(){
+		//$.messager.alert('警告框','这是一个提示');
+		//$.messager.confirm('确认框','你真的要删除么？',function(flag){
+		//	if(flag){
+		//		alert('删除成功');
+		//	}
+		//});
+		
+		//$.messager.prompt('提示框','请输入你的名字',function(content){
+		//	if(content){
+		//		alert(content);
+		//	}
+		//});
+		
+		//$.messager.progress({
+		//	title:'执行中',
+		//	msg:'努力上传中',
+		//	text:'123',
+		//	interval:300,
+		//});
+		
+		$.messager.show({      //默认在右下角显示
+			title:'我的消息',
+			msg:'消息在五秒后关闭',
+			timeout:5000,
+			
+		});
+		
+			
+	});
+		
+			
+	</script>
+</head>
+
+<body charset="utf-8">
+
+</body>
+</html>

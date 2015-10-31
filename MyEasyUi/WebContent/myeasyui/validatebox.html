@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>validate验证框组件</title>
+
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	<script>
+		$.extend($.fn.validatebox.defaults.rules, {    
+			minLength: {    
+				validator: function(value, param){    
+					return value.length >= param[0];    
+				},    
+				message: 'Please enter at least {0} characters.'   
+			}    
+		});  
+
+	</script>
+	<script>
+		$(function(){
+			$('#email').validatebox({
+				required:true,
+				//validType:'email',
+				//validType:'url',
+				//validType:'minLength[5]',
+				//validType:'minLength[5,10]',
+				//invalidMessage:'你输入的电子邮件格式不合法',
+				
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<input id="email"/>
+</body>
+</html>

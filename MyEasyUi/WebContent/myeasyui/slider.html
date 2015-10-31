@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>slider滑动条组件</title>
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+		$(function(){
+			$('#box').slider({
+				width:300,
+				height:30,
+				//mode:'v',
+				rule:[0,'|',25,'|',50,'|',75,'|',100],
+				showTip:true,
+				//reversed:true,
+				value:12,
+				step:10,
+				tipFormatter:function(value){
+					return value + '%';
+				},
+				onSlideStart:function(value){
+					console.log(value);
+				},
+				onSlideEnd:function(value){
+					console.info(value);
+				},
+				onChange:function(newValue,oldValue){
+					$('#test').css('font-size',newValue);
+				},
+				
+				
+			});
+		})
+	</script>
+</head>
+
+<body>
+	<input id="box" style="margin:100px;"/>
+	<span id="test">文字</span>
+</body>
+</html>

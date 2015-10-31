@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>panel面板组件</title>
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+		$(function(){
+			$('#box').panel({
+				title:'我的面板',
+				width:500,
+				height:300,
+				iconCls:'icon-save',
+				//left:200,
+				//top:100,
+				//fit:true,
+				cls:'a',
+				headerCls:'b',
+				bodyCls:'c',
+				content:'啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦',
+				collapsible:true,
+				minimizable:true,
+				maximizable:true,
+				tools:[{
+					iconCls:'icon-help',
+					handler:function(){alert('help!');}
+				},{
+					iconCls:'icon-add',
+					handler:function(){alert('add!');}
+				
+				},{
+					iconCls:'icon-edit',
+					handler:function(){alert('edit!');}
+				}],
+				//collapsed:true,
+				//href:'content.php',
+				//loadingMessage:'加载中',
+				
+				
+			});
+			
+			//$('#box').panel('panel').css('position', 'absolute');
+			$(document).click(function(){
+				$('#box').panel('resize',{
+					'width':600,
+					'height':400
+				});
+			});
+			
+			$(document).click(function(){
+				$('#box').panel('move',{
+					'left':200,
+					'top':200
+				});
+			});
+			
+			console.info($('#box').panel('options'));
+			console.log($('#box').panel('panel'));
+			console.log($('#box').panel('header'));
+			console.log($('#box').panel('body'));
+			$('#box').panel('setTitle','我的标题');
+		});
+	</script>
+</head>
+
+<body>
+	<div id="box" style="width:500px;">
+		<p>内容区域</p>
+	</div>
+</body>
+</html>

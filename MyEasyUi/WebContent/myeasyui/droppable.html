@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>放置组件</title>
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+		$(function(){
+			$('#box').droppable({
+			
+				//accept:'#d1,#d2',
+				//disabled:true,
+				onDragEnter:function(e,source){
+					$(this).css('background','pink');
+				},
+				onDragLeave:function(e,source){
+					$(this).css('background','red');
+				}
+			});
+			
+			console.info($('#box').droppable('options'));
+		});
+	</script>
+</head>
+
+<body>
+	<div id="box" style="width:200px;height:150px;background:black;"></div>
+	<div id="d1" class="easyui-draggable" style="width:50px;height:50px;background:green;"></div>
+	<div id="d2" class="easyui-draggable" style="width:50px;height:50px;background:grey;"></div>
+	<div id="d3" class="easyui-draggable" style="width:50px;height:50px;background:blue;"></div>
+</body>
+</html>

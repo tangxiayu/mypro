@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>calendar日历组件</title>
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+		$(function(){
+			$('#box').calendar({
+				width:300,
+				height:300,
+				//fit:true,
+				//border:false,
+				weeks:['S','M','T','W','T','F','S'],
+				//year:2015,
+				//month:9,
+				current:new Date(2015,6,1),
+				//formatter:function(date){
+				//	return '#'+date.getDate();
+				//},
+				styler:function(date){
+					if(date.getDate() == 1){
+						return 'background-color:red';
+					}
+					if(date.getDay() == 1){
+						return 'background-color:#ccc';
+					}
+				},
+				
+				validator:function(date){
+					if(date.getDay() == 1){
+						return true;
+					}else{
+						return false;
+					}
+				}
+				
+				
+				
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="box" class="easyui-calendar"></div>
+</body>
+</html>

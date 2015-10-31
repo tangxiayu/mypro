@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>pagination分页组件</title>
+
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+		$(function(){
+			$('#box').pagination({
+				total:50,
+				pageSize:20,  //每页显示几条
+				pageNumber:2,
+				pageList:[20,40,60],
+				buttons:[{
+					iconCls:'icon-add',
+					text:'增加'
+				},'-',{
+					iconCls:'icon-edit',
+					text:'编辑'
+				}],
+				//layout:['first','prev','links','next','last'],
+				//beforePageText:'弟弟',
+				//afterPageText:'有{pages}个',
+				//displayMsg:'从{from}到{to}有{total}人',
+				
+				
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="box" style="width:700px;border:1px solid #ccc;"></div>
+</body>
+</html>

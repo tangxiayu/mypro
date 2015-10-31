@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>拖动组件</title>
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	<script>
+		$(function(){
+			$('#box').draggable({
+				//revert:true,
+				//handle:'#pox',
+				//edge:5,
+				//proxy:'clone',
+				//deltaX:50,
+				//deltaY:50,
+				proxy:function(source){
+					var p = $('<div style="width:200px;height:150px;border:1px dashed black;"></div>');
+					//p.appendTo('body');
+					p.html($(source).html()).appendTo('body');
+					return p;
+				},
+				onBeforeDrag:function(e){
+					alert('拖动前触发');
+				},
+				
+				
+				
+			});
+			
+			
+			console.log($('#box').draggable('options'));
+		});
+	</script>
+	
+</head>
+
+<body>
+	<div id="box" style="width:200px;height:150px;background:red;">
+		<span id="pox">内容部分</span>
+	</div>
+</body>
+</html>

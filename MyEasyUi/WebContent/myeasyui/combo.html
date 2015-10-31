@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>combo自定义下拉框组件</title>
+
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+		$(function(){
+			$('#box').combo({
+				required:true,
+				editable:false,
+				
+			});
+			$('#food').appendTo($('#box').combo('panel'));
+			$('#food input').click(function(){
+				var v = $(this).val();
+				var s = $(this).next('span').text();
+				$('#box').combo('setValue',v).combo('setText',s).combo('hidePanel');
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<input id="box"/>
+	<div id="food">
+		<div style="background:#ccc;padding:5px;">请选择一个食物</div>
+		<div class="padding:5px;">
+			<input type="radio" name="food" value="01"/><span>米饭</span><br/>
+			<input type="radio" name="food" value="02"/><span>面条</span><br/>
+			<input type="radio" name="food" value="03"/><span>米线</span>
+		</div>
+	</div>
+</body>
+</html>

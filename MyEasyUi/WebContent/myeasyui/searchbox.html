@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>searchbox组件</title>
+
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+		$(function(){
+			$('#ss').searchbox({
+				menu:'#box',
+				searcher:function qq(name, value){
+					alert(name+'-'+value);
+				},
+				prompt:'请输入关键字',
+				value:'固定的值',
+			});
+			
+			var m = $('#ss').searchbox('menu');
+			m.menu('setIcon',{
+				target:m.menu('findItem','体育频道').target,
+				iconCls:'icon-save'
+			});
+			
+			$(document).dblclick(function(){
+				$('#ss').searchbox('reset');
+			});
+			
+		});
+		
+	</script>
+</head>
+
+<body>
+	<div style="width:300px;" class="easyui-searchbox" id="ss"></div>
+	
+	<div id="box" style="width:120px;">
+		<div>所有频道</div>
+		<div>体育频道</div>
+		<div>新闻频道</div>
+	</div>
+</body>
+</html>

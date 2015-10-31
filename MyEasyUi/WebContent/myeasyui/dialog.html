@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../js/jquery-easyui-1.4.2/themes/icon.css">
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+	
+	<script>
+		$(function(){
+			$('#box').dialog({
+				width:500,
+				height:300,
+				title:'对话框',
+				modal:true,
+				//toolbar:'#tb'
+				buttons:[{
+					iconCls:'icon-ok',
+					text:'确定',
+					plain:true,
+					handler:function(){
+						alert('ok');
+					}
+				},{
+					iconCls:'icon-cancel',
+					text:'取消',
+					plain:true,
+					handler:function(){
+						alert('');
+					}
+					
+				}],
+				toolbar:[{
+					iconCls:'icon-save',
+					text:'保存',
+					handler:function(){
+						alert('remove');
+					}
+				},{
+					iconCls:'icon-edit',
+					text:'编辑',
+					handler:function(){
+						alert('edit');
+					}
+					
+				}]
+			});
+			
+		});
+	</script>
+</head>
+
+<body>
+	<div id="box" style="width:400px;height:250px;"></div>
+	<!--<div id="tb">
+		<a class="easyui-linkbutton" data-options="iconCls:'icon-ok',">确定</a>
+		<a class="easyui-linkbutton" data-options="iconCls:'icon-cancel',">取消</a>
+	</div> -->
+</body>
+</html>

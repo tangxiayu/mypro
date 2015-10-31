@@ -1,0 +1,17 @@
+[
+	{
+		"linkName":"本地",
+		"link":"http://localhost:8080",
+		"date":"2014-10-1"
+	},
+	{
+		"linkName":"天猫",
+		"link":"http://www.tianmao.com",
+		"date":"2014-10-6"
+	},
+	{
+		"linkName":"京东",
+		"link":"http://www.jingdong.com",
+		"date":"2014-10-8"
+	}
+]
