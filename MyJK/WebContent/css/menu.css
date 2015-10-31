@@ -1,0 +1,39 @@
+ul{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	display:block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:40px;
+	color:white;
+	background-image:url(../images/collapse.jpg);
+	background-repeat:no-repeat;
+	background-position:3px center;
+	
+}
+.main,.hmain{
+	width:120px;
+	background-color:#1E90FF;
+}
+.main ul,.hmain ul{
+	margin:0;
+	padding:0;
+	background-color:#eeeeee;
+	width:120px;
+	display:none;
+}
+
+.main li a,.hmain li a{
+	color:black;
+	background-image:none;
+}
+
+li{border:1px dotted blue;}
+
+
+.hmain{
+	float:left;
+	margin-right:1px;
+}

@@ -1,0 +1,170 @@
+charset 'utf-8';
+*{
+	margin:0;
+	padding:0
+}
+body{
+	background:#333;
+}
+.box{
+	width:1000px;
+	height:280px;
+	margin:50px auto;
+	background:yellow;
+}
+.box .link{
+	width:205px;
+	height:280px;
+	margin:0 20px;
+	float:left;
+	
+	background:red;
+}
+.link .icon{
+	width:100%;
+	height:190px;
+	display:inline-block;
+	transition:all 0.2s linear;
+	-webkit-transition:all 0.2s linear;/*safari and chrome*/
+	-ms-transition:all 0.2s linear;/*ie9*/
+	-moz-transition:all 0.2s linear;/*firefox*/
+}
+.link-miss .icon{
+	background:url("../images/mission.png") no-repeat center center;
+}
+.link-play .icon{
+	background:url("../images/play.png") no-repeat center center;
+}
+.link-touch .icon{
+	background:url("../images/touch.png") no-repeat center center;
+}
+
+/*����.link:hover .iconӴ*/
+.link .icon:hover{
+	transform:rotate(360deg) scale(1.2);
+	-webkit-transform:rotate(360deg) scale(1.2);/*safari and chrome*/
+	-ms-transform:rotate(360deg) scale(1.2);/*ie9*/
+	-moz-transform:rotate(360deg) scale(1.2);/*firefox*/
+}
+
+.button{
+	display:block;
+	width:180px;
+	height:50px;
+	line-height:50px;
+	text-decoration:none;
+	color:#2dcb70;
+	border:2px solid rgba(255,255,255,0.8);
+	font-weight:bolder;
+	padding-left:20px;
+	margin:0 auto;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	background:url("../images/allow.png") no-repeat 130px center;
+	position:relative;
+	transition:all 0.4s ease;
+	-webkit-transition:all 0.4s ease;/*safari and chrome*/
+	-ms-transition:all 0.4s ease;/*ie9*/
+	-moz-transition:all 0.4s ease;/*firefox*/
+}
+
+.button:hover{
+	border:2px solid rgba(255,255,255,1);
+	background-position:140px center;
+}
+
+.button .line{
+	display:block;
+	position:absolute;
+	background:none;
+	transition:all 0.4s ease;
+	-webkit-transition:all 0.4s ease;/*safari and chrome*/
+	-ms-transition:all 0.4s ease;/*ie9*/
+	-moz-transition:all 0.4s ease;/*firefox*/
+}
+
+.button:hover .line{
+	background:#fff;
+}
+
+
+/*
+top:
+�߶Ȳ���
+���0-->���ӵĿ��
+λ���ڱ���-->��
+*/
+.button .line-top{
+	height:2px;
+	width:0px;
+	left:-110%;
+	top:-2px;
+}
+
+.button:hover .line-top{
+	width:180px;
+	left:-2px;
+}
+
+.button .line-bottom{
+	height:2px;
+	width:10px;
+	right:-110%;
+	bottom:-2px;
+}
+.button:hover .line-bottom{
+	width:180px;
+	right:-2px;
+}
+
+.button .line-left{
+	width:2px;
+	height:0px;
+	bottom:-110%;
+	left:-2px;;
+}
+.button:hover .line-left{
+	height:50px;
+	bottom:-2px;
+}
+
+.button .line-right{
+	width:2px;
+	height:0px;
+	top:-110%;
+	right:-2px;
+}
+.button:hover .line-right{
+	height:50px;
+	top:-2px;
+}
+
+.box .tip{
+	position:absolute;  /*span���Ѷ�λ����Ԫ��*/
+	padding:0 14px;
+	height:35px;
+	line-height:35px;
+	color:#fff;
+	background:#2DCB70;
+	font-size:16px;
+	font-weight:normal;
+	text-transform:none;/*定义文本的大小写状态,此属性对中文无意义,  none: 正常无变化 */
+	margin:0 auto;
+	border-radius:5px;
+	opacity:0;
+	
+}
+.tip em{
+	
+}
+.tip span{
+	position:absolute;
+	width:0px;
+	height:0px;
+	overflow:hidden;
+	border:7px solid transparent;
+	border-top-color:black;
+	left:50%;
+	margin-left:-3px;
+	bottom:-14px;  /*�����tip����λ*/
+}
